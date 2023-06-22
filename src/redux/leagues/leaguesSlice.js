@@ -1,11 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API_KEY = process.env.REACT_APP_FOOTBALL_API_KEY;
 const API_URL = 'https://api.football-data.org/v4/competitions/PD/standings?season=2022';
 
 const headers = {
-  headers: { 'X-Auth-Token': API_KEY }
+  headers: {
+    'X-Auth-Token': import.meta.env.VITE_FOOTBALL_API_KEY
+  }
 };
 
 export const getLeagueInfo = createAsyncThunk(
@@ -21,7 +22,7 @@ export const getLeagueInfo = createAsyncThunk(
 );
 
 const initialState = {
-  LeagueTeams: [],
+  leagueTeams: [],
   status: "idle",
   error: null,
 };
@@ -34,6 +35,7 @@ const leaguesSlice = createSlice({
     builder
       .addCase(getLeagueInfo.fulfilled, (state, action) => {
         state.status = "fulfilled";
+        state.leagueTeams = action.payload.competition;
         console.log(action.payload);
       })
       .addCase(getLeagueInfo.pending, (state) => {
