@@ -9,8 +9,8 @@ const Navbar = () => (
     </div>
     <h1 className="text-xl text-white text-lato-300">Leagues</h1>
     <div className="flex gap-4">
-      <IoMdSettings className="text-xl text-white" />
       <BsFillMicFill className="text-xl text-white" />
+      <IoMdSettings className="text-xl text-white" />
     </div>
   </header>
 );

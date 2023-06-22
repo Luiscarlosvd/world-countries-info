@@ -1,5 +1,9 @@
+import LeagueList from '../components/LeaguesList';
+
 const Home = () => (
-    <div>Home Page</div>
+    <div>
+        <LeagueList />
+    </div>
 )
 
 export default Home
