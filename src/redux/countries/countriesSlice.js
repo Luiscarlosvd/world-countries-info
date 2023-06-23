@@ -34,7 +34,7 @@ const countriesSlice = createSlice({
       .addCase(getCountriesInfo.fulfilled, (state, action) => {
         const newCountriesArr = action.payload.map(country => ({
             name: country.name.common,
-            flag: country.flags.svg,
+            flag: country.flags.png,
             region: country.region,
         }));
         console.log(newCountriesArr);

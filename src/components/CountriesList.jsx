@@ -33,8 +33,16 @@ const CountriesList = () => {
             <option value="Americas">Americas</option>
             <option value="Asia">Asia</option>
           </select>
-          <h1>{displayCountriesByRegion[0].name}</h1>
-          <img src={displayCountriesByRegion[0].flag} alt="League emblem image" />
+          <div className='grid grid-cols-2'>
+            {displayCountriesByRegion.map((country) => (
+              <>
+                <div>
+                  <h1>{country.name}</h1>
+                  <img src={country.flag} alt="Country image flag" />
+                </div>
+              </>
+            ))}
+          </div>
         </>
       }
     </div>
