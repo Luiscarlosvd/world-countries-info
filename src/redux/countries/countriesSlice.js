@@ -18,18 +18,24 @@ const initialState = {
   countries: [],
   status: "idle",
   error: null,
+  region: "Europe",
 };
 
 const countriesSlice = createSlice({
   name: "countries",
   initialState,
-  reducers: {},
+  reducers: {
+    changeRegion: (state, action) => {
+      return { ...state, region: action.payload };
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getCountriesInfo.fulfilled, (state, action) => {
         const newCountriesArr = action.payload.map(country => ({
             name: country.name.common,
             flag: country.flags.svg,
+            region: country.region,
         }));
         console.log(newCountriesArr);
         return { ...state, status: "fulfilled", countries: newCountriesArr };
@@ -43,4 +49,5 @@ const countriesSlice = createSlice({
   },
 });
 
+export const { changeRegion } = countriesSlice.actions;
 export default countriesSlice.reducer;
