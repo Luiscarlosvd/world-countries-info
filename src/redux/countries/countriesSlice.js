@@ -38,8 +38,7 @@ const countriesSlice = createSlice({
         return { ...state, status: "Loading" }
       })
       .addCase(getCountriesInfo.rejected, (state, action) => {
-        state.status = "rejected";
-        state.error = action.error.message;
+        return { ...state, status: "rejected", error: action.error.message }
       });
   },
 });
