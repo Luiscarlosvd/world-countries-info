@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import worldImg from '../assets/pngegg (4).png';
 import { getCountriesInfo } from '../redux/countries/countriesSlice';
 
 const CountriesList = () => {
@@ -17,6 +18,9 @@ const CountriesList = () => {
       {country.status === "Loading" && <div className='text-white'>Loading...</div>}
       {country.status === "fulfilled" && 
         <>
+          <div>
+            <img className="" src={worldImg} alt="Icon world map" />
+          </div>
           <h1>{country.countries[0].name}</h1>
           <img src={country.countries[0].flag} alt="League emblem image" />
         </>
