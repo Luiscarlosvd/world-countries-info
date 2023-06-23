@@ -33,8 +33,11 @@ const CountriesList = () => {
             <option value="Europe">Europe</option>
             <option value="Americas">Americas</option>
             <option value="Asia">Asia</option>
+            <option value="Oceania">Oceania</option>
+            <option value="Africa">Africa</option>
+            <option value="Antarctic">Antarctic</option>
           </select>
-          <div className='grid grid-cols-2'>
+          <div className='grid grid-cols-2 mt-8 w-full'>
             {displayCountriesByRegion.map((country) => (
               <CountryCard
                 key={country.name}
