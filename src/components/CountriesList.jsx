@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { changeRegion } from '../redux/countries/countriesSlice';
 import worldImg from '../assets/pngegg (4).png';
 import { getCountriesInfo } from '../redux/countries/countriesSlice';
+import CountryCard from './CountryCard';
 
 const CountriesList = () => {
   const country = useSelector(state => state.countries);
@@ -35,12 +36,11 @@ const CountriesList = () => {
           </select>
           <div className='grid grid-cols-2'>
             {displayCountriesByRegion.map((country) => (
-              <>
-                <div>
-                  <h1>{country.name}</h1>
-                  <img src={country.flag} alt="Country image flag" />
-                </div>
-              </>
+              <CountryCard
+                key={country.name}
+                name={country.name}
+                flag={country.flag}
+              />
             ))}
           </div>
         </>
