@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import leaguesReducer from './leagues/leaguesSlice';
+import countriesReducer from './countries/countriesSlice';
 
 const store = configureStore({
   reducer: {
-    leagues: leaguesReducer,
+    countries: countriesReducer,
   },
 });
 

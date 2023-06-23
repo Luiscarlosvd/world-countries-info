@@ -1,8 +1,8 @@
-import LeagueList from '../components/LeaguesList';
+import CountriesList from '../components/CountriesList';
 
 const Home = () => (
     <div>
-        <LeagueList />
+        <CountriesList />
     </div>
 )
 
