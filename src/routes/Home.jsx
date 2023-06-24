@@ -1,8 +1,8 @@
-import LeagueList from '../components/LeaguesList';
+import CountriesList from '../components/CountriesList';
 
 const Home = () => (
-    <div>
-        <LeagueList />
+    <div className='bg-blue-800 h-screen'>
+        <CountriesList />
     </div>
 )
 
