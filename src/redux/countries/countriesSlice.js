@@ -36,6 +36,7 @@ const countriesSlice = createSlice({
             name: country.name.common,
             flag: country.flags.png,
             region: country.region,
+            population: country.population,
         }));
         console.log(newCountriesArr);
         return { ...state, status: "fulfilled", countries: newCountriesArr };

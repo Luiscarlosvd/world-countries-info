@@ -37,12 +37,16 @@ const CountriesList = () => {
             <option value="Africa">Africa</option>
             <option value="Antarctic">Antarctic</option>
           </select>
-          <div className='grid grid-cols-2 mt-8 w-full'>
+          <div className="mt-8 w-full bg-black bg-opacity-10">
+            <p className="ml-4 py-1 text-sm text-lato-400 text-white">STATS BY COUNTRY</p>
+          </div>
+          <div className='grid grid-cols-2 w-full'>
             {displayCountriesByRegion.map((country) => (
               <CountryCard
                 key={country.name}
                 name={country.name}
                 flag={country.flag}
+                population={country.population}
               />
             ))}
           </div>
