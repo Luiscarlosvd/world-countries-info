@@ -7,7 +7,7 @@ const CountryCard = ({ name, flag, population }) => {
     <div className="flex text-right flex-col bg-blue-700 relative px-2 py-4 gap-8 items-center border border-blue-800 border-opacity-10y- justify-between">
       <Link className="absolute right-2 top-2" to={name}><PiArrowCircleRightLight className="text-3xl text-gray-200" /></Link>
       <div className="self-start ml-3">
-        <img className="w-32 h-20 rounded-sm" src={flag} alt="Country image flag" />
+        <img className="w-28 h-4-5 rounded-sm" src={flag} alt="Country image flag" />
       </div>
       <div className="self-end mr-3">
         <h2 className="text-white text-lg text-lato-700">{name}</h2>

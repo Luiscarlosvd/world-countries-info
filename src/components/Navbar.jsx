@@ -3,7 +3,7 @@ import { IoMdSettings, IoIosArrowBack } from 'react-icons/io';
 import { BsFillMicFill } from 'react-icons/bs';
 
 const Navbar = () => (
-  <header className="flex justify-between px-6 items-center py-3 border-b-1 border-gray-400 bg-blue-800">
+  <header className="flex justify-between px-6 items-center py-3 bg-blue-800">
     <div>
       <Link to="/"><IoIosArrowBack className="text-xl text-white mr-5" /></Link>
     </div>
