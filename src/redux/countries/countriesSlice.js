@@ -19,6 +19,7 @@ const API_COUNTRY_DETAILS_URL = 'https://restcountries.com/v3.1/name/';
 export const getCountryDetails = createAsyncThunk("countries/getCountryDetails",
   async (name) => {
     try {
+      console.log(name);
       const response = await axios.get(API_COUNTRY_DETAILS_URL + name);
       return response.data;
     } catch (error) {
@@ -62,7 +63,16 @@ const countriesSlice = createSlice({
         return { ...state, status: "rejected", error: action.error.message }
       })
       .addCase(getCountryDetails.fulfilled, (state, action) => {
-        console.log(action.payload);
+        const countryDetails = action.payload.map(country => ({
+          area: country.area,
+          capital: country.capital,
+          currencies: country.currencies,
+          demonyms: country.demonyms.eng.f,
+          languages: country.languages,
+          timezones: country.timezones[0],
+          mapLocation: country.maps.googleMaps,
+        }))
+        console.log(countryDetails);
         return { ...state, status: "fulfilled" };
       })
       .addCase(getCountryDetails.pending, (state) => {
