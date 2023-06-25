@@ -1,12 +1,25 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API_URL = 'https://restcountries.com/v3.1/all';
+const API_COUNTRIES_URL = 'https://restcountries.com/v3.1/all';
 
 export const getCountriesInfo = createAsyncThunk("countries/getCountriesInfo",
   async () => {
     try {
-      const response = await axios.get(API_URL);
+      const response = await axios.get(API_COUNTRIES_URL);
+      return response.data;
+    } catch (error) {
+      return error.message;
+    }
+  }
+);
+
+const API_COUNTRY_DETAILS_URL = 'https://restcountries.com/v3.1/name/';
+
+export const getCountryDetails = createAsyncThunk("countries/getCountryDetails",
+  async (name) => {
+    try {
+      const response = await axios.get(API_COUNTRY_DETAILS_URL + name);
       return response.data;
     } catch (error) {
       return error.message;
@@ -19,6 +32,7 @@ const initialState = {
   status: "idle",
   error: null,
   region: "Europe",
+  countryDetails: [],
 };
 
 const countriesSlice = createSlice({
@@ -34,17 +48,27 @@ const countriesSlice = createSlice({
       .addCase(getCountriesInfo.fulfilled, (state, action) => {
         const newCountriesArr = action.payload.map(country => ({
             name: country.name.common,
+            officialName: country.name.official,
             flag: country.flags.png,
             region: country.region,
             population: country.population,
         }));
-        console.log(newCountriesArr);
         return { ...state, status: "fulfilled", countries: newCountriesArr };
       })
       .addCase(getCountriesInfo.pending, (state) => {
         return { ...state, status: "Loading" }
       })
       .addCase(getCountriesInfo.rejected, (state, action) => {
+        return { ...state, status: "rejected", error: action.error.message }
+      })
+      .addCase(getCountryDetails.fulfilled, (state, action) => {
+        console.log(action.payload);
+        return { ...state, status: "fulfilled" };
+      })
+      .addCase(getCountryDetails.pending, (state) => {
+        return { ...state, status: "Loading" }
+      })
+      .addCase(getCountryDetails.rejected, (state, action) => {
         return { ...state, status: "rejected", error: action.error.message }
       });
   },
