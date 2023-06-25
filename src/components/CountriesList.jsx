@@ -60,7 +60,7 @@ const CountriesList = () => {
           <div className="mt-6 w-full bg-black bg-opacity-10">
             <p className="ml-4 py-1 text-sm text-lato-400 text-white">STATS BY COUNTRY</p>
           </div>
-          <div className='grid grid-cols-2 w-full'>
+          <div className='grid grid-cols-2 w-full bg-blue-800'>
             {displayCountriesByRegion.map((country) => (
               <CountryCard
                 key={country.name}
