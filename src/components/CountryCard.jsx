@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const CountryCard = ({ name, flag, population }) => {
   return (
     <div className="flex text-right flex-col bg-blue-700 relative px-2 py-4 gap-8 items-center border border-blue-800 border-opacity-10y- justify-between">
-      <Link className="absolute right-2 top-2" to={name}><PiArrowCircleRightLight className="text-3xl text-gray-200" /></Link>
+      <Link className="absolute right-2 top-2" to={`/details/${name}`}><PiArrowCircleRightLight className="text-3xl text-gray-200" /></Link>
       <div className="self-start ml-3">
         <img className="w-28 h-4-5 rounded-sm" src={flag} alt="Country image flag" />
       </div>

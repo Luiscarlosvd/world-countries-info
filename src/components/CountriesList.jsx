@@ -41,7 +41,7 @@ const CountriesList = () => {
       {country.status === "fulfilled" && 
         <>
           <div>
-            <img className="" src={worldImg} alt="Icon world map" />
+            <img src={worldImg} alt="Icon world map" />
           </div>
           <div className="w-2/3">
             <input className="text-lato-400 search-bar text-white bg-black bg-opacity-30 mt-4 rounded-md p-1 px-3 w-full" type="search" onChange={handleSearchValue} placeholder="Search country"/>
