@@ -1,10 +1,15 @@
-import React from 'react'
+import { useParams } from "react-router";
+import Navbar from "./Navbar";
 
 const DetailsCountry = () => {
+  const { countryName } = useParams()
   return (
-    <div>
-      Hello I'm Details
-    </div>
+    <>
+        <Navbar title={`${countryName}`} />
+        <div>
+            Hello I'm Details
+        </div>
+    </>
   )
 }
 

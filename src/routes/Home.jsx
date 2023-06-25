@@ -1,9 +1,13 @@
 import CountriesList from '../components/CountriesList';
+import Navbar from '../components/Navbar';
 
 const Home = () => (
-    <div className='bg-blue-800 h-screen'>
-        <CountriesList />
-    </div>
+    <>
+        <Navbar title="Countries Information" />
+        <div className='bg-blue-800 h-screen'>
+            <CountriesList />
+        </div>
+    </>
 )
 
 export default Home
