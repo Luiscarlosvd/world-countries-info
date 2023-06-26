@@ -99,7 +99,6 @@ const DetailsCountry = () => {
                         <a className="text-blue-200 underline" href={country.countryDetails.mapLocation}>Link to Google Maps</a>
                     </div>
                 </section>
-                
             </div>
         }
     </>
