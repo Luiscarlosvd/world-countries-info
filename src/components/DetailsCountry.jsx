@@ -7,19 +7,23 @@ const DetailsCountry = () => {
   const country = useSelector((state) => state.countries);
   const { countryName } = useParams();
   const [ currencies, setCurrencies ] = useState([]);
+  const [ languages, setLanguages ] = useState([])
   const filteredCountry = country.countries.find((country) => country.name === countryName);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getCountryDetails(filteredCountry.officialName));
-    console.log(country.countryDetails)
   }, [dispatch, countryName]);
 
   useEffect(() => {
     if (country.detailsStatus === 'fulfilled') {
-      if(country.countryDetails.currencies !== undefined && country.countryDetails.currencies !== null) {
+      if(country.countryDetails.currencies !== undefined) {
         const currencyKeys = Object.keys(country.countryDetails.currencies);
         setCurrencies(currencyKeys);
+      }
+      if(country.countryDetails.languages !== undefined ){
+        const languagesKeys = Object.keys(country.countryDetails.languages);
+        setLanguages(languagesKeys);
       }
     }
   }, [country.detailsStatus, countryName]);
@@ -35,6 +39,19 @@ const DetailsCountry = () => {
         }
     });
     return currencyDiv;
+  };
+
+  const languageParagraph = (languageKeys) => {
+    const languageDiv = languageKeys.map((key) => {
+        if (country.countryDetails.languages !== undefined) {
+            const language = country.countryDetails.languages[key];
+            if(language){
+                return <p className="text-white text-right" key={key}>{language}</p>;
+            }
+           return null;
+        }
+    });
+    return languageDiv;
   };
 
   return (
@@ -66,15 +83,21 @@ const DetailsCountry = () => {
                         <p className="text-white text-lato-400">Time Zones</p>
                         <p className="text-white">{country.countryDetails.timezones}</p>
                     </div>
-                    <div className="flex justify-between my-3">
-                        <p className="text-white text-lato-400">Map Location</p>
-                        <a className="text-blue-200 underline" href={country.countryDetails.mapLocation}>Link to Google Maps</a>
+                    <div className="flex justify-between my-3 h-auto items-center">
+                        <p className="text-white text-lato-400">Language</p>
+                        <div className="flex flex-col">
+                           {languageParagraph(languages)} 
+                        </div>
                     </div>
                     <div className="flex justify-between my-3 h-auto items-center">
                         <p className="text-white text-lato-400">Currencies</p>
                         <div className="flex flex-col">
                            {currencyParagraph(currencies)} 
                         </div>
+                    </div>
+                    <div className="flex justify-between my-3">
+                        <p className="text-white text-lato-400">Map Location</p>
+                        <a className="text-blue-200 underline" href={country.countryDetails.mapLocation}>Link to Google Maps</a>
                     </div>
                 </section>
                 
