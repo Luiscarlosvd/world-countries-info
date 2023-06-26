@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { IoMdSettings, IoIosArrowBack } from 'react-icons/io';
 import { BsFillMicFill } from 'react-icons/bs';
 
 const Navbar = ({ title }) => (
-  <header className="flex justify-between px-6 items-center py-3 bg-blue-800">
+  <header className="flex justify-between px-6 fixed w-full items-center py-3 bg-blue-800">
     <div>
       <Link to="/"><IoIosArrowBack className="text-xl text-white mr-5" /></Link>
     </div>
@@ -14,5 +15,9 @@ const Navbar = ({ title }) => (
     </div>
   </header>
 );
+
+Navbar.propTypes = {
+  title: PropTypes.string.isRequired,
+}
 
 export default Navbar;

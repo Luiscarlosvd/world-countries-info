@@ -1,5 +1,5 @@
 import { useParams } from "react-router";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Navbar from "./Navbar";
 import { getCountryDetails } from "../redux/countries/countriesSlice";
 import { useSelector, useDispatch } from "react-redux";
@@ -18,8 +18,8 @@ const DetailsCountry = () => {
   return (
     <>
         <Navbar title={`${countryName}`} />
-        {country.status === "Loading" && <div className='text-white'>Loading...</div>}
-        {country.status === "fulfilled" &&
+        {country.detailsStatus === "Loading" && <div className='text-white text-xl align-middle h-screen text-center bg-blue-800'>Loading...</div>}
+        {country.detailsStatus === "fulfilled" &&
             <div className="bg-blue-800 h-screen">
                 <div className="flex flex-col px-3 gap-4 items-center justify-between w-4/5 mx-auto py-12">
                     <img className="w-44 h-auto" src={filteredCountry.flag} alt={`${country.name} flag image`} />
@@ -36,6 +36,10 @@ const DetailsCountry = () => {
                     <div className="flex justify-between my-3">
                         <p className="text-white text-lato-400">Capital</p>
                         <p className="text-white">{country.countryDetails[0].capital}</p>
+                    </div>
+                    <div className="flex justify-between my-3">
+                        <p className="text-white text-lato-400">Demonym</p>
+                        <p className="text-white">{country.countryDetails[0].demonyms}</p>
                     </div>
                 </section>
                 

@@ -42,6 +42,7 @@ const initialState = {
   status: "idle",
   error: null,
   region: "Europe",
+  detailsStatus: "idle",
   countryDetails: [],
 };
 
@@ -71,14 +72,14 @@ const countriesSlice = createSlice({
       .addCase(getCountriesInfo.rejected, (state, action) => {
         return { ...state, status: "rejected", error: action.error.message }
       })
-      .addCase(getCountryDetails.fulfilled, (state, action) => {
-        return { ...state, status: "fulfilled", countryDetails: action.payload };
-      })
       .addCase(getCountryDetails.pending, (state) => {
-        return { ...state, status: "Loading" }
+        return { ...state, detailsStatus: "Loading" }
+      })
+      .addCase(getCountryDetails.fulfilled, (state, action) => {
+        return { ...state, detailsStatus: "fulfilled", countryDetails: action.payload };
       })
       .addCase(getCountryDetails.rejected, (state, action) => {
-        return { ...state, status: "rejected", error: action.error.message }
+        return { ...state, detailsStatus: "rejected", error: action.error.message }
       });
   },
 });
