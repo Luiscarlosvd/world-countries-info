@@ -35,13 +35,21 @@ const CountriesList = () => {
     setValueSearch(value);
   }
 
+  const totalPopulation = () => {
+    let total = 0;
+    displayCountriesByRegion.map((country) => {
+      total += country.population;
+    })
+    return total;
+  }
+
   return (
     <main className='flex flex-col justify-center items-center'>
       {country.status === "Loading" && <div className='text-white'>Loading...</div>}
       {country.status === "fulfilled" && 
         <>
           <div>
-            <img className="" src={worldImg} alt="Icon world map" />
+            <img src={worldImg} alt="Icon world map" />
           </div>
           <div className="w-2/3">
             <input className="text-lato-400 search-bar text-white bg-black bg-opacity-30 mt-4 rounded-md p-1 px-3 w-full" type="search" onChange={handleSearchValue} placeholder="Search country"/>
@@ -57,10 +65,14 @@ const CountriesList = () => {
               <option value="Antarctic">Antarctic</option>
             </select>
           </div>
+          <div className="text-center mt-4 text-white">
+            <p>Total Population of {country.region}:</p>
+            <p>{totalPopulation()}</p>
+          </div>
           <div className="mt-6 w-full bg-black bg-opacity-10">
             <p className="ml-4 py-1 text-sm text-lato-400 text-white">STATS BY COUNTRY</p>
           </div>
-          <div className='grid grid-cols-2 w-full'>
+          <section className='grid grid-cols-2 w-full bg-blue-800'>
             {displayCountriesByRegion.map((country) => (
               <CountryCard
                 key={country.name}
@@ -69,7 +81,7 @@ const CountriesList = () => {
                 population={country.population}
               />
             ))}
-          </div>
+          </section>
         </>
       }
     </main>

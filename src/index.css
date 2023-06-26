@@ -37,3 +37,11 @@ select {
   transform: scale(1.055);
   transition: all 0.5s;
 }
+
+.text-shadow {
+  text-shadow: 0 2.5px 0 rgba(0, 0, 0, 0.748);
+}
+
+.country-information div:nth-child(odd) {
+  background-color: #000c6a31;
+}
