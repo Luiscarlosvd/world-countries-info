@@ -39,7 +39,7 @@ select {
 }
 
 .text-shadow {
-  text-shadow: 0px 2.5px 0px rgba(0, 0, 0, 0.748);
+  text-shadow: 0 2.5px 0 rgba(0, 0, 0, 0.748);
 }
 
 .country-information div:nth-child(odd) {
