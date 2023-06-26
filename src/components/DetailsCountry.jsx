@@ -1,6 +1,5 @@
 import { useParams } from "react-router";
 import { useEffect } from "react";
-import Navbar from "./Navbar";
 import { getCountryDetails } from "../redux/countries/countriesSlice";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -17,7 +16,6 @@ const DetailsCountry = () => {
 
   return (
     <>
-        <Navbar title={`${countryName}`} />
         {country.detailsStatus === "Loading" && <div className='text-white text-xl align-middle h-screen text-center bg-blue-800'>Loading...</div>}
         {country.detailsStatus === "fulfilled" &&
             <div className="bg-blue-800 h-screen">
