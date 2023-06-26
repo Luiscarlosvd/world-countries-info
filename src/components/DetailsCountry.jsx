@@ -12,12 +12,13 @@ const DetailsCountry = () => {
 
   useEffect(() => {
     dispatch(getCountryDetails(filteredCountry.officialName));
+    console.log(country.countryDetails)
   }, [dispatch, countryName]);
 
   useEffect(() => {
     if (country.detailsStatus === 'fulfilled') {
-      if(country.countryDetails[0].currencies !== undefined && country.countryDetails[0].currencies !== null) {
-        const currencyKeys = Object.keys(country.countryDetails[0].currencies);
+      if(country.countryDetails.currencies !== undefined && country.countryDetails.currencies !== null) {
+        const currencyKeys = Object.keys(country.countryDetails.currencies);
         setCurrencies(currencyKeys);
       }
     }
@@ -25,8 +26,8 @@ const DetailsCountry = () => {
 
   const currencyParagraph = (currencyKeys) => {
     const currencyDiv = currencyKeys.map((key) => {
-        if (country.countryDetails[0].currencies !== undefined) {
-            const currency = country.countryDetails[0].currencies[key];
+        if (country.countryDetails.currencies !== undefined) {
+            const currency = country.countryDetails.currencies[key];
             if(currency){
                 return <p className="text-white text-right" key={key}>{currency.name} {currency.symbol}</p>;
             }
@@ -51,23 +52,23 @@ const DetailsCountry = () => {
                 <section className="w-5/6 m-auto">
                     <div className="flex justify-between my-3">
                         <p className="text-white text-lato-400">Capital</p>
-                        <p className="text-white">{country.countryDetails[0].capital}</p>
+                        <p className="text-white">{country.countryDetails.capital}</p>
                     </div>
-                    <div className="flex justify-between my-3">
-                        <p className="text-white text-lato-400">Demonym</p>
-                        <p className="text-white">{country.countryDetails[0].demonyms}</p>
+                    <div className="flex justify-between my-3 items-center">
+                        <p className="text-white text-lato-400 mr-5">Demonym</p>
+                        <p className="text-white text-right">{country.countryDetails.demonyms}</p>
                     </div>
                     <div className="flex justify-between my-3">
                         <p className="text-white text-lato-400">Area</p>
-                        <p className="text-white">{country.countryDetails[0].area} Km<sup>2</sup></p>
+                        <p className="text-white">{country.countryDetails.area} Km<sup>2</sup></p>
                     </div>
                     <div className="flex justify-between my-3">
                         <p className="text-white text-lato-400">Time Zones</p>
-                        <p className="text-white">{country.countryDetails[0].timezones}</p>
+                        <p className="text-white">{country.countryDetails.timezones}</p>
                     </div>
                     <div className="flex justify-between my-3">
                         <p className="text-white text-lato-400">Map Location</p>
-                        <a className="text-blue-200 underline" href={country.countryDetails[0].mapLocation}>Link to Google Maps</a>
+                        <a className="text-blue-200 underline" href={country.countryDetails.mapLocation}>Link to Google Maps</a>
                     </div>
                     <div className="flex justify-between my-3 h-auto items-center">
                         <p className="text-white text-lato-400">Currencies</p>

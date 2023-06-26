@@ -22,6 +22,7 @@ export const getCountryDetails = createAsyncThunk("countries/getCountryDetails",
       const response = await axios.get(API_COUNTRY_DETAILS_URL + name);
       const filteredCountryDetails = response.data.map(country => ({
         name: country.name.common,
+        official: country.name.official,
         area: country.area,
         capital: country.capital,
         currencies: country.currencies,
@@ -29,8 +30,9 @@ export const getCountryDetails = createAsyncThunk("countries/getCountryDetails",
         languages: country.languages,
         timezones: country.timezones[0],
         mapLocation: country.maps.googleMaps,
-      }))
-      return filteredCountryDetails;
+      }));
+      const selectedCountry = filteredCountryDetails.find(country => country.official === name);
+      return selectedCountry;
     } catch (error) {
       return error.message;
     }
