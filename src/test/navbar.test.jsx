@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import { describe, test, expect } from 'yargs';
+import { describe, test, expect } from 'vitest';
 import Navbar from '../components/Navbar';
 
 describe('Navbar', () => {
