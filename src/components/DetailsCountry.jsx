@@ -16,21 +16,25 @@ const DetailsCountry = () => {
 
   useEffect(() => {
     if (country.detailsStatus === 'fulfilled') {
-      const currencyKeys = Object.keys(country.countryDetails[0].currencies);
-      setCurrencies(currencyKeys);
+      if(country.countryDetails[0].currencies !== undefined && country.countryDetails[0].currencies !== null) {
+        const currencyKeys = Object.keys(country.countryDetails[0].currencies);
+        setCurrencies(currencyKeys);
+      }
     }
   }, [country.detailsStatus, countryName]);
 
   const currencyParagraph = (currencyKeys) => {
     const currencyDiv = currencyKeys.map((key) => {
-        const currency = country.countryDetails[0].currencies[key];
-        if (currency) {
-          return <p className="text-white text-right" key={key}>{currency.name} {currency.symbol}</p>;
+        if (country.countryDetails[0].currencies !== undefined) {
+            const currency = country.countryDetails[0].currencies[key];
+            if(currency){
+                return <p className="text-white text-right" key={key}>{currency.name} {currency.symbol}</p>;
+            }
+           return null;
         }
-        return null;
     });
     return currencyDiv;
-  }
+  };
 
   return (
     <>
