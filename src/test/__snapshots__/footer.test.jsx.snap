@@ -1,0 +1,15 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Footer > should render the footer correctly 1`] = `
+<div>
+  <div
+    class="bg-blue-900 p-7 text-white"
+  >
+    <p
+      class="text-lato-400"
+    >
+      Created by Luiscarlosvd under CC License
+    </p>
+  </div>
+</div>
+`;

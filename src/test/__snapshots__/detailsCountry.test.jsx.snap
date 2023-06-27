@@ -1,0 +1,156 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DetailsCountry > should render country details when detailsStatus is fulfilled 1`] = `
+<div>
+  <div
+    class="bg-blue-700 h-full"
+  >
+    <div
+      class="flex flex-col px-3 gap-4 items-center justify-between w-4/5 mx-auto py-12"
+    >
+      <img
+        alt="undefined flag image"
+        class="w-44 h-auto mt-10"
+        src="https://restcountries.com/data/usa.svg"
+      />
+      <h1
+        class="text-gray-200 text-right text-shadow text-lato-700 text-2xl"
+      >
+        United States of America
+      </h1>
+    </div>
+    <div
+      class="w-full bg-black bg-opacity-20"
+    >
+      <p
+        class="ml-4 py-1 text-xs text-lato-400 text-white"
+      >
+        COUNTRY INFORMATION - 2023
+      </p>
+    </div>
+    <section
+      class="w-full country-information"
+    >
+      <div
+        class="flex justify-between p-5"
+      >
+        <p
+          class="text-white text-lato-700"
+        >
+          Capital
+        </p>
+        <p
+          class="text-white"
+        >
+          Washington, D.C.
+        </p>
+      </div>
+      <div
+        class="flex justify-between p-5 items-center"
+      >
+        <p
+          class="text-white text-lato-700 mr-5"
+        >
+          Demonym
+        </p>
+        <p
+          class="text-white text-right"
+        >
+          American
+        </p>
+      </div>
+      <div
+        class="flex justify-between p-5"
+      >
+        <p
+          class="text-white text-lato-700"
+        >
+          Area
+        </p>
+        <p
+          class="text-white"
+        >
+          9629091
+           Km
+          <sup>
+            2
+          </sup>
+        </p>
+      </div>
+      <div
+        class="flex justify-between p-5"
+      >
+        <p
+          class="text-white text-lato-700"
+        >
+          Time Zones
+        </p>
+        <p
+          class="text-white"
+        >
+          UTC-12:00
+          UTC-11:00
+        </p>
+      </div>
+      <div
+        class="flex justify-between p-5 h-auto items-center"
+      >
+        <p
+          class="text-white text-lato-700"
+        >
+          Language
+        </p>
+        <div
+          class="flex flex-col"
+        >
+          <p
+            class="text-white text-right"
+          >
+            English
+          </p>
+          <p
+            class="text-white text-right"
+          >
+            Spanish
+          </p>
+        </div>
+      </div>
+      <div
+        class="flex justify-between p-5 h-auto items-center"
+      >
+        <p
+          class="text-white text-lato-700"
+        >
+          Currencies
+        </p>
+        <div
+          class="flex flex-col"
+        >
+          <p
+            class="text-white text-right"
+          >
+            United States dollar
+             
+            $
+          </p>
+        </div>
+      </div>
+      <div
+        class="flex justify-between p-5"
+      >
+        <p
+          class="text-white text-lato-700"
+        >
+          Map Location
+        </p>
+        <a
+          class="text-blue-200 underline"
+          href="https://www.google.com/maps/place/USA"
+        >
+          Link to Google Maps
+        </a>
+      </div>
+    </section>
+  </div>
+</div>
+`;
