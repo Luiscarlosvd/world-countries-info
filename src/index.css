@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-lato-300 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+.text-lato-400 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+.text-lato-700 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+}
+
+.h-4-5 {
+  height: 4.5rem;
+}
+
+select option {
+  background-color: #000c6ab1;
+}
+
+select {
+  border: 2px solid #000c6ab1;
+  outline: none;
+}
+
+.search-bar:focus {
+  outline-color: #000c6ab1;
+  transform: scale(1.055);
+  transition: all 0.5s;
+}
+
+.text-shadow {
+  text-shadow: 0 2.5px 0 rgba(0, 0, 0, 0.748);
+}
+
+.country-information div:nth-child(odd) {
+  background-color: #000c6a31;
+}

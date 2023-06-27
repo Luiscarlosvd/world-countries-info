@@ -1,0 +1,189 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CountriesList > renders countries list correctly 1`] = `
+<div>
+  <main
+    class="flex flex-col justify-center items-center"
+  >
+    <div>
+      <img
+        alt="Icon world map"
+        src="/src/assets/pngegg (4).png"
+      />
+    </div>
+    <div
+      class="w-2/3"
+    >
+      <input
+        class="text-lato-400 search-bar text-white bg-black bg-opacity-30 mt-4 rounded-md p-1 px-3 w-full"
+        placeholder="Search country"
+        type="search"
+      />
+    </div>
+    <div
+      class="flex text-lato-400 items-center gap-2 mt-4"
+    >
+      <p
+        class="text-white"
+        for="region"
+      >
+        Region
+      </p>
+      <select
+        class="text-white rounded-md bg-opacity-25 bg-black p-1 pr-7 text-lato-400"
+        name="region"
+      >
+        <option
+          value="Europe"
+        >
+          Europe
+        </option>
+        <option
+          value="Americas"
+        >
+          Americas
+        </option>
+        <option
+          value="Asia"
+        >
+          Asia
+        </option>
+        <option
+          value="Oceania"
+        >
+          Oceania
+        </option>
+        <option
+          value="Africa"
+        >
+          Africa
+        </option>
+        <option
+          value="Antarctic"
+        >
+          Antarctic
+        </option>
+      </select>
+    </div>
+    <div
+      class="text-center mt-4 text-white"
+    >
+      <p>
+        Total Population of 
+        Americas
+        :
+      </p>
+      <p>
+        251074605
+      </p>
+    </div>
+    <div
+      class="mt-6 w-full bg-black bg-opacity-10"
+    >
+      <p
+        class="ml-4 py-1 text-sm text-lato-400 text-white"
+      >
+        STATS BY COUNTRY
+      </p>
+    </div>
+    <section
+      class="grid grid-cols-2 w-full bg-blue-800"
+    >
+      <div
+        class="flex text-right flex-col bg-blue-700 relative px-2 py-4 gap-8 items-center border border-blue-800 border-opacity-10y- justify-between"
+      >
+        <a
+          class="absolute right-2 top-2"
+          href="/details/Argentina"
+        >
+          <svg
+            class="text-3xl text-gray-200"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 256 256"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218Zm44.24-94.24a6,6,0,0,1,0,8.48l-32,32a6,6,0,0,1-8.48-8.48L153.51,134H88a6,6,0,0,1,0-12h65.51l-21.75-21.76a6,6,0,0,1,8.48-8.48Z"
+            />
+          </svg>
+        </a>
+        <div
+          class="self-start ml-3"
+        >
+          <img
+            alt="Country image flag"
+            class="w-28 h-4-5 rounded-sm"
+            src="https://restcountries.com/data/arg.svg"
+          />
+        </div>
+        <div
+          class="self-end mr-3"
+        >
+          <h2
+            class="text-white text-lg text-lato-700"
+          >
+            Argentina
+          </h2>
+          <p
+            class="text-white text-sm text-lato-300"
+          >
+            Population: 
+            44938712
+          </p>
+        </div>
+      </div>
+      <div
+        class="flex text-right flex-col bg-blue-700 relative px-2 py-4 gap-8 items-center border border-blue-800 border-opacity-10y- justify-between"
+      >
+        <a
+          class="absolute right-2 top-2"
+          href="/details/Brazil"
+        >
+          <svg
+            class="text-3xl text-gray-200"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 256 256"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218Zm44.24-94.24a6,6,0,0,1,0,8.48l-32,32a6,6,0,0,1-8.48-8.48L153.51,134H88a6,6,0,0,1,0-12h65.51l-21.75-21.76a6,6,0,0,1,8.48-8.48Z"
+            />
+          </svg>
+        </a>
+        <div
+          class="self-start ml-3"
+        >
+          <img
+            alt="Country image flag"
+            class="w-28 h-4-5 rounded-sm"
+            src="https://restcountries.com/data/bra.svg"
+          />
+        </div>
+        <div
+          class="self-end mr-3"
+        >
+          <h2
+            class="text-white text-lg text-lato-700"
+          >
+            Brazil
+          </h2>
+          <p
+            class="text-white text-sm text-lato-300"
+          >
+            Population: 
+            206135893
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+`;
